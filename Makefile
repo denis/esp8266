@@ -3,6 +3,10 @@ ESPTOOL=vendor/esptool/esptool.py
 PORT=/dev/tty.SLAB_USBtoUART
 BAUD=115200
 
+.PHONY: test
+test:
+	$(foreach file,$(wildcard test/*_test.lua),lua $(file);)
+
 upload:
 	@$(NODEMCU_UPLOADER) --port $(PORT) --baud $(BAUD) upload $(wildcard *.lua) $(wildcard lib/*.lua)
 

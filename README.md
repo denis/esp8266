@@ -9,4 +9,10 @@ Create a config file and provide your SSID and password for Wi-Fi connection:
 
 To upload code into your ESP8266 board run:
 
+    make upload
+
+To run tests:
+
     make
+
+Denis Barushev <barushev@gmail.com>
