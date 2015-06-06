@@ -1,3 +1,5 @@
+local request = require("lib.request")
+
 local routes = {
   HEAD = {},
   GET = {},
@@ -29,14 +31,15 @@ local function start_server()
 
   server:listen(80, function(connection)
     connection:on("receive", function(connection, data)
-      local s, e, method, path = data:find("([A-Z]+) (.*) HTTP\/1\.1")
+      print(data)
+      r = request.parse(data)
 
-      if routes[method] and routes[method][path] then
+      if routes[r.method] and routes[r.method][r.path] then
         connection:send("HTTP/1.1 200 OK\r\n")
         connection:send("Content-Type: text/html\r\n")
         connection:send("\r\n")
-        connection:send(routes[method][path]())
-      elseif routes[method] then
+        connection:send(routes[r.method][r.path]())
+      elseif routes[r.method] then
         connection:send("HTTP/1.1 404 Not Found\r\n")
         connection:send("\r\n")
       else
