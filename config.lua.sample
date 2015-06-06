@@ -1,0 +1,6 @@
+return {
+  wifi = {
+    ssid = "SSID",
+    password = "PASSWORD"
+  }
+}

@@ -1,0 +1,9 @@
+[submodule "vendor/esptool"]
+	path = vendor/esptool
+	url = https://github.com/themadinventor/esptool.git
+[submodule "vendor/nodemcu-uploader"]
+	path = vendor/nodemcu-uploader
+	url = https://github.com/kmpm/nodemcu-uploader.git
+[submodule "vendor/nodemcu-firmware"]
+	path = vendor/nodemcu-firmware
+	url = https://github.com/nodemcu/nodemcu-firmware.git
