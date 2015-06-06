@@ -36,8 +36,11 @@ local function start_server()
         connection:send("Content-Type: text/html\r\n")
         connection:send("\r\n")
         connection:send(routes[method][path]())
-      else
+      elseif routes[method] then
         connection:send("HTTP/1.1 404 Not Found\r\n")
+        connection:send("\r\n")
+      else
+        connection:send("HTTP/1.1 501 Not Implemented\r\n")
         connection:send("\r\n")
       end
     end)

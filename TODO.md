@@ -1,6 +1,6 @@
 # TODO
 
-[ ] Return `501 Not Implemented` for non-HEAD/GET/POST requests
+[x] Return `501 Not Implemented` for non-HEAD/GET/POST requests
 [ ] Implement `request` library, parse first line of request only for getting method and path
 [ ] Implement `uri` library for parsing URIs
 [ ] Lookup routes by path only
