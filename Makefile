@@ -4,7 +4,7 @@ PORT=/dev/tty.SLAB_USBtoUART
 BAUD=115200
 
 upload:
-	@$(NODEMCU_UPLOADER) --port $(PORT) --baud $(BAUD) upload $(wildcard *.lua)
+	@$(NODEMCU_UPLOADER) --port $(PORT) --baud $(BAUD) upload $(wildcard *.lua) $(wildcard lib/*.lua)
 
 format:
 	@$(NODEMCU_UPLOADER) --port $(PORT) --baud $(BAUD) file format

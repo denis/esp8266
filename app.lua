@@ -1,4 +1,4 @@
-require("sinatra")
+require("lib.sinatra")
 
 get("/", function()
   return [[
