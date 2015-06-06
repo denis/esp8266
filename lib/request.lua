@@ -10,8 +10,16 @@ function request.parse(request)
 
   local params = {}
 
-  for k, v in parsed_uri.query:gmatch("([^&]+)=([^&]+)") do
+  for k, v in parsed_uri.query:gmatch("([^&]+)=([^&]*)") do
     params[k] = v
+  end
+
+  if method == "POST" then
+    request_body = request:sub(request:find("\r\n\r\n") + 4, -1)
+
+    for k, v in request_body:gmatch("([^&]+)=([^&]*)") do
+      params[k] = v
+    end
   end
 
   return {

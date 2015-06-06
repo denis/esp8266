@@ -6,7 +6,7 @@
 [x] Lookup routes by path only
 [ ] Implement `response` library
 [x] Implement GET params
-[ ] Implement POST params
+[x] Implement POST params
 [ ] Implemet content types
 [ ] Implement simple template rendering
 [ ] Implement redirects
